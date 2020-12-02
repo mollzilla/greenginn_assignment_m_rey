@@ -1,4 +1,5 @@
 // import './App.css';
+import AppContainer from "./components/AppContainer";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
         <h1>
           WELCOME TO MY GREENGINN ASSIGNMENT
         </h1>
+        <AppContainer />
       </header>
     </div>
   );
