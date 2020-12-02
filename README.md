@@ -6,3 +6,4 @@ WELCOME TO MY GREENGINN ASSIGNMENT
 4. Created a basic layout for the app and a fake array to mimic the amount of buttons
 5. Fetched pairs data to display actual value of the buttons
 6. First approach to logic of pair choosing with pseudocode
+

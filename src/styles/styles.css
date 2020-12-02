@@ -38,8 +38,8 @@ body {
 }
 
 .container-item {
-  height: 80vh;
-  margin: 50px 0;
+  height: 85vh;
+  margin: 25px 0;
   width: 40vw;
 }
 
@@ -57,5 +57,10 @@ body {
   padding: 3px 8px;
   margin: 5px;
   background-color: #117e94;
+}
+
+.selected.pair-button {
+  padding: 5px 12px;
+  background-color: red;
 }
 /*# sourceMappingURL=styles.css.map */

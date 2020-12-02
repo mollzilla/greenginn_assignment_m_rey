@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/styles.css';
 import AvgTickerValues from "./AvgTickerValues";
 import TradingPairsContainer from "./TradingPairsContainer";

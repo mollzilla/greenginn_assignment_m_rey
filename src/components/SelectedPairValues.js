@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/styles.css';
 // import './index.css';
 // import App from './App';
 import Paper from '@material-ui/core/Paper';
 
 
-export default function SelectedPairValues() {
+export default function SelectedPairValues(props) {
+
+  const { pairs } = props;
+
+  // console.log(pairs)
+
+  // useEffect(() => {
+  //   if()
+  // })
 
   return (
     <div>

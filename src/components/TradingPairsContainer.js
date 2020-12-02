@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/styles.css';
-// import './index.css';
-// import App from './App';
-
 import SelectedPairValues from "./SelectedPairValues";
 import CositoDeArriba from "./CositoDeArriba";
-import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
 
 export default function TradingPairsContainer() {
 
-  const [pair, setPair] = useState({
+  const [pairs, setPairs] = useState({
     0: "",
     1: ""
   });
+
+  const [lastSelected, setLastSelected] = useState(1)
   const [pairsData, setPairsData] = useState([]);
 
   async function fetchPairsData() {
@@ -29,11 +27,18 @@ export default function TradingPairsContainer() {
     }      
   }
 
-  const handlePairChange = (value, order) => {
-    setPairsData({
-      ...pairsData,
-      order: value 
-    })
+  useEffect(() => {
+    setLastSelected((ls) => ls===1 ? 0 : 1);
+  }, [pairs]);
+
+  const handlePairChange = (value) => {
+
+    setPairs({
+      ...pairs,
+      [lastSelected]: value 
+    });
+    // console.log("pairs: ",pairs)
+    // console.log("lastSelected: ",lastSelected)
   }
 
   useEffect(() => { fetchPairsData() }, [])
@@ -41,8 +46,8 @@ export default function TradingPairsContainer() {
   return (
     <div>
       <Paper elevation={3} className="container-item trading-pairs-container">
-        <CositoDeArriba pairsData={pairsData} handlePairChange={handlePairChange} />
-        <SelectedPairValues />
+        <CositoDeArriba pairs={pairs} pairsData={pairsData} handlePairChange={handlePairChange} />
+        <SelectedPairValues pairs={pairs} />
       </Paper>
       
     </div>
