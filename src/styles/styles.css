@@ -49,7 +49,40 @@ body {
 }
 
 .cosito-de-arriba {
-  background-color: plum;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cosito-de-arriba .header {
+  padding: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cosito-de-arriba .header .clear-pair-selection {
+  font-size: .8rem;
+  padding: 4px 10px;
+  margin: 5px;
+  background-color: #c02f2f;
+}
+
+.cosito-de-arriba .button-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
 }
 
 .cosito-de-arriba .pair-button {
@@ -60,7 +93,7 @@ body {
 }
 
 .selected.pair-button {
-  padding: 5px 12px;
-  background-color: red;
+  padding: 6px 14px;
+  background-color: #1ca05e;
 }
 /*# sourceMappingURL=styles.css.map */

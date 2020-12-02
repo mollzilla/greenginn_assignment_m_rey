@@ -9,7 +9,7 @@ export default function SelectedPairValues(props) {
 
   const { pairs } = props;
 
-  // console.log(pairs)
+  console.log(pairs)
 
   // useEffect(() => {
   //   if()

@@ -36,7 +36,29 @@ body {
 }
 
 .cosito-de-arriba {
-  background-color: plum;
+  
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .clear-pair-selection {
+      font-size: .8rem;
+      padding: 4px 10px;
+      margin: 5px;
+      background-color: rgb(192, 47, 47);
+    }
+  }
+
+  .button-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
   .pair-button {
     font-size: .7rem;
     padding: 3px 8px;
@@ -46,6 +68,6 @@ body {
 }
 
 .selected.pair-button {
-  padding: 5px 12px;
-  background-color: red;
+  padding: 6px 14px;
+  background-color: rgb(28, 160, 94);
 }
