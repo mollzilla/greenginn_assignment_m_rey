@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/styles.css';
 // import './index.css';
 // import App from './App';
@@ -11,18 +11,38 @@ import Paper from '@material-ui/core/Paper';
 
 export default function TradingPairsContainer() {
 
+  const [pair, setPair] = useState({
+    0: "",
+    1: ""
+  });
+  const [pairsData, setPairsData] = useState([]);
+
+  async function fetchPairsData() {
+    try {
+      
+      let resp = await fetch("https://www.bitstamp.net/api/v2/trading-pairs-info/");
+      let fetchedPairsData=await resp.json();
+      setPairsData(fetchedPairsData);
+      return pairsData;
+    } catch (error) {
+      console.log(error)
+    }      
+  }
+
+  const handlePairChange = (value, order) => {
+    setPairsData({
+      ...pairsData,
+      order: value 
+    })
+  }
+
+  useEffect(() => { fetchPairsData() }, [])
+
   return (
     <div>
       <Paper elevation={3} className="container-item trading-pairs-container">
-      {/* <Grid
-          container
-          direction="column"
-          justify="stretch"
-          alignItems="space-between"
-        > */} 
-        <CositoDeArriba />
+        <CositoDeArriba pairsData={pairsData} handlePairChange={handlePairChange} />
         <SelectedPairValues />
-      {/* </Grid> */}
       </Paper>
       
     </div>

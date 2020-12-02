@@ -1,7 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/styles.css';
-// import './index.css';
-// import App from './App';
 import AvgTickerValues from "./AvgTickerValues";
 import TradingPairsContainer from "./TradingPairsContainer";
 import Container from '@material-ui/core/Container';
