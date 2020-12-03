@@ -10,8 +10,8 @@ export default function CositoDeArriba(props) {
   const { pairsData, handlePairChange, pairs } = props;
 
 
-  const onPairSelect = (symbol) => {
-    handlePairChange(symbol);
+  const onPairSelect = (symbol, description) => {
+    handlePairChange(symbol, description);
     // if()
   }
 
@@ -36,10 +36,10 @@ export default function CositoDeArriba(props) {
         <div className="button-container">
           {pairsData.length && pairsData.map((pair, i) =>
             <ColorButton
-              onClick={() => { onPairSelect(pair.url_symbol) }}
+              onClick={() => { onPairSelect(pair.url_symbol, pair.description) }}
               variant="contained"
               color="primary"
-              className={` ${Object.values(pairs).includes(pair.url_symbol) ? "selected pair-button" : "pair-button"}`}
+              className={` ${Object.values(pairs[0]).includes(pair.url_symbol) || Object.values(pairs[1]).includes(pair.url_symbol) ? "selected pair-button" : "pair-button"}`}
               key={i}>
               {pair.description}
             </ColorButton>

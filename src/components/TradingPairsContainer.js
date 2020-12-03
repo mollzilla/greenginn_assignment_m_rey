@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/styles.css';
-import SelectedPairValues from "./SelectedPairValues";
+import GJNumbersView from "./GJNumbersView";
 import CositoDeArriba from "./CositoDeArriba";
 import Paper from '@material-ui/core/Paper';
 
@@ -8,8 +8,14 @@ import Paper from '@material-ui/core/Paper';
 export default function TradingPairsContainer() {
 
   const [pairs, setPairs] = useState({
-    0: "",
-    1: ""
+    0: {
+      symbol: "",
+      description: ""
+    },
+    1: {
+      symbol: "",
+      description: ""
+    },
   });
 
   const [lastSelected, setLastSelected] = useState(1)
@@ -31,14 +37,15 @@ export default function TradingPairsContainer() {
     setLastSelected((ls) => ls===1 ? 0 : 1);
   }, [pairs]);
 
-  const handlePairChange = (value) => {
+  const handlePairChange = (symbol, description) => {
 
     setPairs({
       ...pairs,
-      [lastSelected]: value 
-    });
-    // console.log("pairs: ",pairs)
-    // console.log("lastSelected: ",lastSelected)
+      [lastSelected]: {
+        symbol: symbol,
+        description: description 
+      } 
+    })
   }
 
   useEffect(() => { fetchPairsData() }, [])
@@ -47,7 +54,7 @@ export default function TradingPairsContainer() {
     <div>
       <Paper elevation={3} className="container-item trading-pairs-container">
         <CositoDeArriba pairs={pairs} pairsData={pairsData} handlePairChange={handlePairChange} />
-        <SelectedPairValues pairs={pairs} />
+        <GJNumbersView pairs={pairs} />
       </Paper>
       
     </div>
