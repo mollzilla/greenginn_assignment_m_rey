@@ -40,12 +40,11 @@ body {
 .container-item {
   height: 85vh;
   margin: 25px 0;
-  width: 40vw;
 }
 
 .trading-pairs-paper {
-  margin: 15px;
-  padding: 20px;
+  margin: 10px;
+  padding: 15px;
 }
 
 .cosito-de-arriba {
@@ -59,7 +58,7 @@ body {
 }
 
 .cosito-de-arriba .header {
-  padding: 12px;
+  padding: 0 12px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,14 +80,14 @@ body {
 .cosito-de-arriba .button-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
 }
 
 .cosito-de-arriba .pair-button {
   font-size: .7rem;
-  padding: 3px 8px;
-  margin: 5px;
+  padding: 2px 4px;
+  margin: 4px;
   background-color: #117e94;
 }
 

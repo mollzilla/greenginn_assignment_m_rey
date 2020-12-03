@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/styles.css';
 // import './index.css';
 // import App from './App';
@@ -9,11 +9,23 @@ export default function SelectedPairValues(props) {
 
   const { pairs } = props;
 
-  console.log(pairs)
+  const [pairsComparison, setPairsComparison] = useState()
 
-  // useEffect(() => {
-  //   if()
-  // })
+  async function fetchPairsComparison() {
+    try {   
+      let resp = await fetch(`https://www.bitstamp.net/api/v2/ticker/${pairs[0]}/${pairs[1]}`);
+      let fetchedPairsData=await resp.json();
+      setPairsComparison(fetchedPairsData);
+      console.log( fetchedPairsData);
+      
+    } catch (error) {
+      console.log(error)
+    }      
+  }
+// console.log(pairsComparison)
+  useEffect(() => {
+    fetchPairsComparison()
+  }, [pairs]);
 
   return (
     <div>
