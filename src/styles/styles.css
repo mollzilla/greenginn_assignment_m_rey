@@ -29,22 +29,27 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .container-item {
-  height: 85vh;
   margin: 25px 0;
 }
 
 .trading-pairs-paper {
   margin: 10px;
   padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .cosito-de-arriba {
@@ -94,5 +99,29 @@ body {
 .selected.pair-button {
   padding: 6px 14px;
   background-color: #1ca05e;
+}
+
+.pairs-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gj-number-label {
+  margin: 25px;
+  padding: 10px;
+  color: #EAEAEA;
+  background: -webkit-gradient(linear, left top, left bottom, from(#117e94), to(#0f6e81));
+  background: linear-gradient(#117e94, #0f6e81);
+  border-radius: 3px;
+  -webkit-box-shadow: 5px 5px 8px -1px rgba(0, 0, 0, 0.43);
+  box-shadow: 5px 5px 8px -1px rgba(0, 0, 0, 0.43);
+}
+
+.gj-number-label .value {
+  border-top: 1px solid #EAEAEA;
+  padding-top: 5px;
+  margin-top: 5px;
 }
 /*# sourceMappingURL=styles.css.map */

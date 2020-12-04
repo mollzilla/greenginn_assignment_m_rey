@@ -10,4 +10,7 @@ WELCOME TO MY GREENGINN ASSIGNMENT
 8. Some styling was needed on the buttons, used display:grid to uniform the layout and tried to keep the buttons section as small as possible to have future room for the display of the values.
 9. useEffect() is used in the SelectedPairValues component to display updated data.
 10. SelectedPairValues was renamed GJNumbersView
+11. Modified the object on TradingPairsContainer to be passed as props to GJNumbersView to include the pair description.
+12. after attempting several material UI elements for GJNumberLabel, created my own card
+
 

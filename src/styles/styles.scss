@@ -18,12 +18,12 @@ body {
 .trading-pairs-container {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  align-items: center;
 }
 
 .container-item  {
-  height: 85vh;
+  // height: 85vh;
   margin: 25px 0;
   // width: 40vw;
   // background-color: plum;
@@ -32,7 +32,8 @@ body {
 .trading-pairs-paper {
   margin: 10px;
   padding: 15px;
-  // display: flex;
+  display: flex;
+  flex-direction: column;
 }
 
 .cosito-de-arriba {
@@ -70,4 +71,25 @@ body {
 .selected.pair-button {
   padding: 6px 14px;
   background-color: rgb(28, 160, 94);
+}
+
+.pairs-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gj-number-label {
+  margin: 25px;
+  padding: 10px;
+  color: #EAEAEA;
+  background:linear-gradient(#117e94,#0f6e81) ;
+  border-radius: 3px;
+  -webkit-box-shadow: 5px 5px 8px -1px rgba(0,0,0,0.43); 
+  box-shadow: 5px 5px 8px -1px rgba(0,0,0,0.43);
+
+  .value {
+    border-top: 1px solid #EAEAEA;
+    padding-top: 5px;
+    margin-top: 5px;
+  }
 }
