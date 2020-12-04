@@ -12,5 +12,7 @@ WELCOME TO MY GREENGINN ASSIGNMENT
 10. SelectedPairValues was renamed GJNumbersView
 11. Modified the object on TradingPairsContainer to be passed as props to GJNumbersView to include the pair description.
 12. after attempting several material UI elements for GJNumberLabel, created my own card
-
+13. Formatted dates. At this point I noticed the app was malfunctioning and bringing the correct data only one out of 2 times. This had to do with the state which decides the order of the pair. Started debugging.
+14. At this point I realized I had made a mistake comprehending the assignment and each "pair" was just ONE ticker. So my logic had been far more intrincate and complicated than needed. Started backpedalling. No frustration, just code.
+15. Changed all variable names to get familiar with the idea that I am dealing with just one pair, not a comparison of two pairs.
 

@@ -8,43 +8,45 @@ import Paper from '@material-ui/core/Paper';
 
 export default function GJNumbersView(props) {
 
-  const { pairs } = props;
-  const [pairsComparison, setPairsComparison] = useState();
-// console.log(pairsComparison)
+  const { pair } = props;
+  const [pairComparison, setPairComparison] = useState([]);
+  let [GJNumberLabels, setGJNumberLabels] = useState([])
 
   async function fetchPairsComparison() {
-    try {   
-      let resp = await fetch(`https://www.bitstamp.net/api/v2/ticker/${pairs[0].symbol}/${pairs[1].symbol}`);
-      let fetchedPairsData=await resp.json();
-      setPairsComparison(fetchedPairsData);      
+    try {
+      let resp = await fetch(`https://www.bitstamp.net/api/v2/ticker/${pair}`);
+      let fetchedPairData=await resp.json();
+      setPairComparison(fetchedPairData)
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }      
   }
 
   useEffect(() => {
     fetchPairsComparison()
-  }, [pairs]);
+  }, [pair]);
 
-  function returnGJNumberLabels() {
-    const GJNumberLabelsArray=[];
-    for(let descriptionValuePair in pairsComparison) {
-      GJNumberLabelsArray.push({
-        description:descriptionValuePair,
-        value: pairsComparison[descriptionValuePair]
-      })
-    }
-    return GJNumberLabelsArray;
-  }
+  // useEffect(() => {
+  //   returnGJNumberLabels();
+  // }, [pairComparison])
+
+  // function returnGJNumberLabels() {
+  //   const GJNumberLabelsArray=[];
+  //   for(let descriptionValuePair in pairsComparison) {
+  //     GJNumberLabelsArray.push({
+  //       description:descriptionValuePair,
+  //       value: pairsComparison[descriptionValuePair]
+  //     })
+  //   }
+  //   setGJNumberLabels(GJNumberLabelsArray);
+  // }
 
   return (
     <div>
       <Paper elevation={3} className="trading-pairs-paper">
-        <h2>{pairs[0].description} -- {pairs[1].description}</h2>  
-        {/* This will be the main container the selected pair values.         */}
-        {/* https://www.bitstamp.net/api/v2/ticker/btcusdc/btcgbp */}
+        <h2>{pair.description}</h2>  
         <div className="pairs-list">
-          {returnGJNumberLabels().map((GJNumberLabelsArrayElement, i) => 
+          {pairComparison.map((GJNumberLabelsArrayElement, i) => 
             <GJNumberLabel {...GJNumberLabelsArrayElement} key={i} />
           ) }
         </div>

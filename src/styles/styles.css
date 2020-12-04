@@ -106,10 +106,10 @@ body {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
 }
 
 .gj-number-label {
-  margin: 25px;
   padding: 10px;
   color: #EAEAEA;
   background: -webkit-gradient(linear, left top, left bottom, from(#117e94), to(#0f6e81));
@@ -117,6 +117,10 @@ body {
   border-radius: 3px;
   -webkit-box-shadow: 5px 5px 8px -1px rgba(0, 0, 0, 0.43);
   box-shadow: 5px 5px 8px -1px rgba(0, 0, 0, 0.43);
+}
+
+.gj-number-label h4 {
+  text-transform: capitalize;
 }
 
 .gj-number-label .value {

@@ -1,23 +1,18 @@
 import React, { useEffect } from 'react';
 import '../styles/styles.css';
-// import './index.css';
-// import App from './App';
 import Paper from '@material-ui/core/Paper';
 import ColorButton from '@material-ui/core/Button';
 
 export default function CositoDeArriba(props) {
 
-  const { pairsData, handlePairChange, pairs } = props;
-
+  const { pairData, handlePairChange, pair } = props;
 
   const onPairSelect = (symbol, description) => {
     handlePairChange(symbol, description);
-    // if()
   }
 
-  useEffect(() => {
-
-  }, [pairs]);
+console.log(pairData.map(pair=> pair.url_symbol))
+console.log(pair)
 
   return (
     <div>
@@ -34,14 +29,15 @@ export default function CositoDeArriba(props) {
           </ColorButton>
         </div>
         <div className="button-container">
-          {pairsData.length && pairsData.map((pair, i) =>
+          {pairData.map((onePair, i) =>
             <ColorButton
-              onClick={() => { onPairSelect(pair.url_symbol, pair.description) }}
+              onClick={() => { onPairSelect(onePair.url_symbol, onePair.description) }}
               variant="contained"
               color="primary"
-              className={` ${Object.values(pairs[0]).includes(pair.url_symbol) || Object.values(pairs[1]).includes(pair.url_symbol) ? "selected pair-button" : "pair-button"}`}
+              // className="pair-button"
+              className={`${onePair.url_symbol===pair.symbol ? "selected pair-button" : "pair-button"}`}
               key={i}>
-              {pair.description}
+              {onePair.description}
             </ColorButton>
           )}
         </div>
