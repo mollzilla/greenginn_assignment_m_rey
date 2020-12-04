@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../styles/styles.css';
 import Paper from '@material-ui/core/Paper';
 import ColorButton from '@material-ui/core/Button';
@@ -10,9 +10,6 @@ export default function CositoDeArriba(props) {
   const onPairSelect = (symbol, description) => {
     handlePairChange(symbol, description);
   }
-
-console.log(pairData.map(pair=> pair.url_symbol))
-console.log(pair)
 
   return (
     <div>
@@ -34,7 +31,6 @@ console.log(pair)
               onClick={() => { onPairSelect(onePair.url_symbol, onePair.description) }}
               variant="contained"
               color="primary"
-              // className="pair-button"
               className={`${onePair.url_symbol===pair.symbol ? "selected pair-button" : "pair-button"}`}
               key={i}>
               {onePair.description}

@@ -13,9 +13,8 @@ export default function GJNumberLabel(props) {
     else
     {
       setFormatedValue(`$ ${value}`)
-    }
-      
-  })
+    }    
+  }, [description, value])
 
 
   // console.log(value)

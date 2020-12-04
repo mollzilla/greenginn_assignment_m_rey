@@ -24,10 +24,6 @@ export default function TradingPairsContainer() {
     }      
   }
 
-  // useEffect(() => {
-  //   setLastSelected((ls) => ls===1 ? 0 : 1);
-  // }, [pairs]);
-
   const handlePairChange = (symbol, description) => {
     setPair({
         symbol: symbol,
