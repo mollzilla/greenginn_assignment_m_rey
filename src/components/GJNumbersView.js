@@ -12,7 +12,6 @@ export default function GJNumbersView(props) {
   const [pairComparison, setPairComparison] = useState([]);
   let [GJNumberLabels, setGJNumberLabels] = useState([]);
 
-console.log(pair)
   async function fetchPairComparison() {
     try {
       let resp = await fetch(`https://www.bitstamp.net/api/v2/ticker/${pair.symbol}`);
@@ -22,11 +21,12 @@ console.log(pair)
       console.log(error);
     }      
   }
-console.log(pairComparison)
 
   useEffect(() => {
     if(pair.symbol)
       fetchPairComparison();
+    else
+      setGJNumberLabels([]);
   }, [pair]);
 
   useEffect(() => {
@@ -47,11 +47,11 @@ console.log(pairComparison)
   return (
     <div>
       <Paper elevation={3} className="trading-pairs-paper">
-        <h2>{pair.description}</h2>  
+        <h2>{pair.description ? pair.description : "Please select a pair"}</h2>  
         <div className="pairs-list">
-          {GJNumberLabels.length && GJNumberLabels.map((GJNumberLabelsArrayElement, i) => 
+          {GJNumberLabels.length>1 && GJNumberLabels.map((GJNumberLabelsArrayElement, i) => 
             <GJNumberLabel {...GJNumberLabelsArrayElement} key={i} />
-          ) }
+          )}
         </div>
       </Paper>
     </div>

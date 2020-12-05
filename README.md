@@ -16,4 +16,14 @@ WELCOME TO MY GREENGINN ASSIGNMENT
 14. At this point I realized I had made a mistake comprehending the assignment and each "pair" was just ONE ticker. So my logic had been far more intrincate and complicated than needed. Started backpedalling. No frustration, just code.
 15. Changed all variable names to get familiar with the idea that I am dealing with just one pair, not a comparison of two pairs.
 16. Code refactored. Much simpler than originally thought.
+17. Finishing touches to refactoring: clearing selection and voiding GJNumbersView in case of user clearing selection.
+
+18. Time to tacke "Average Ticker Values". As always, will commence with a basic layout which then will be refined according to the nature of the data to be displayed.
+
+
+19. Modified dev-server-config adding the following:
+        spdy: {
+            protocols: ['http/1.1']
+        }
+      to fix the following warning: "The development server has disconnected.Refresh the page if necessary."
 

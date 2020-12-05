@@ -5,7 +5,7 @@ import ColorButton from '@material-ui/core/Button';
 
 export default function CositoDeArriba(props) {
 
-  const { pairData, handlePairChange, pair } = props;
+  const { pairData, handlePairChange, clearPairSelection, pair } = props;
 
   const onPairSelect = (symbol, description) => {
     handlePairChange(symbol, description);
@@ -17,7 +17,7 @@ export default function CositoDeArriba(props) {
         <div className="button-container header">
           <h4>Choose Pair</h4>
           <ColorButton
-            onClick={() => { }}
+            onClick={() => clearPairSelection() }
             variant="contained"
             color="primary"
             className="clear-pair-selection"
