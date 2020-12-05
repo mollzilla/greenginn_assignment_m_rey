@@ -10,20 +10,11 @@ export default function AvgTickerValues() {
   async function fetchTickerValues() {
     try {
       await Promise.all(
-        [fetch(`https://cors-anywhere.herokuapp.com/bitstamp.net/api/v2/ticker/btcusd`)
-        // , {
-        //     mode: 'cors'
-        // },
-        // fetch(`https://cors-anywhere.herokuapp.com/api.coinbase.com/v2/exchange-rates?currency=BTC`), {
-          // mode: 'cors'
-      // },
-        // fetch(`https://cors-anywhere.herokuapp.com/api-pub.bitfinex.com/v2/tickers?symbols=tBTCUSD`), {
-          // mode: 'cors'
-      // },
-      ]).then(([data1]) =>  {
-        // console.log(data1.json(), data2, data3)
-        // return Promise.all([data1 data1.json()])
-        return Promise.all([data1.json()])
+        [fetch(`https://cors-anywhere.herokuapp.com/bitstamp.net/api/v2/ticker/btcusd`),
+        fetch(`https://cors-anywhere.herokuapp.com/api.coinbase.com/v2/exchange-rates?currency=BTC`),
+        fetch(`https://cors-anywhere.herokuapp.com/api-pub.bitfinex.com/v2/tickers?symbols=tBTCUSD`)
+      ]).then(([data1, data2, data3]) =>  {
+        return Promise.all([data1.json(), data2.json(), data3.json()])
       }).then(data => {
         console.log(data)
       })

@@ -14,34 +14,34 @@ export default function TradingPairsContainer() {
 
   const [pairData, setPairData] = useState([]);
 
-  // async function fetchPairData() {
-  //   try {    
-  //     // let resp = await fetch("https://www.bitstamp.net/api/v2/trading-pairs-info/");
-  //     let fetchedPairData=await resp.json();
-  //     setPairData(fetchedPairData);
-  //   } catch (error) {
-  //     console.log(error)
-  //   }      
-  // }
+  async function fetchPairData() {
+    try {    
+      let resp = await fetch("https://www.bitstamp.net/api/v2/trading-pairs-info/");
+      let fetchedPairData=await resp.json();
+      setPairData(fetchedPairData);
+    } catch (error) {
+      console.log(error)
+    }      
+  }
 
-  // const handlePairChange = (symbol, description) => {
-  //   setPair({
-  //     symbol: symbol,
-  //     description: description 
-  //   });
-  // }
+  const handlePairChange = (symbol, description) => {
+    setPair({
+      symbol: symbol,
+      description: description 
+    });
+  }
 
-  // const clearPairSelection = () => {
-  //   setPair({});
-  // }
+  const clearPairSelection = () => {
+    setPair({});
+  }
 
-  // useEffect(() => { fetchPairData() }, [])
+  useEffect(() => { fetchPairData() }, [])
 
   return (
     <div>
       <Paper elevation={3} className="container-item trading-pairs-container">
-        {/* <CositoDeArriba pair={pair} pairData={pairData} handlePairChange={handlePairChange} clearPairSelection={clearPairSelection} /> */}
-        {/* <GJNumbersView pair={pair} /> */}
+        <CositoDeArriba pair={pair} pairData={pairData} handlePairChange={handlePairChange} clearPairSelection={clearPairSelection} />
+        <GJNumbersView pair={pair} />
       </Paper>
       
     </div>

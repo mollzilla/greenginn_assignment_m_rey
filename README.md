@@ -21,9 +21,3 @@ WELCOME TO MY GREENGINN ASSIGNMENT
 18. Time to tacke "Average Ticker Values". As always, will commence with a basic layout which then will be refined according to the nature of the data to be displayed.
 
 
-19. Modified dev-server-config adding the following:
-        spdy: {
-            protocols: ['http/1.1']
-        }
-      to fix the following warning: "The development server has disconnected.Refresh the page if necessary."
-
