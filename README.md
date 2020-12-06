@@ -20,5 +20,6 @@ WELCOME TO MY GREENGINN ASSIGNMENT
 
 18. Time to tacke "Average Ticker Values". As always, will commence with a basic layout which then will be refined according to the nature of the data to be displayed.
 19. Fetched data and decided to reuse components GJNumbersView and GJNumberLabel  to display data.
-20. Still not knowing which data to average, choose a value to test the functionality
+20. Still not knowing which data to average, choose a value to test the functionality.
+21. Added responsivenes to average container via flexbox.
 

@@ -60,7 +60,7 @@ body {
 
   .button-container {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
   }
 
   .pair-button {
@@ -78,7 +78,7 @@ body {
 
 .pairs-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 15px;
 }
 
@@ -145,6 +145,18 @@ body {
     padding: 25px;
   }
 
+}
 
+@media(min-width: 768px) {
 
+  .cosito-de-arriba {
+    .button-container {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+    }
+  }
+
+  .pairs-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
