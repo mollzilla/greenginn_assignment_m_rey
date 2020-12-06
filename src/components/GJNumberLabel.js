@@ -12,7 +12,7 @@ export default function GJNumberLabel(props) {
     }
     else
     {
-      setFormatedValue(`$ ${value}`)
+      setFormatedValue(`$ ${parseFloat(value).toFixed(2)}`)
     }    
   }, [description, value])
 

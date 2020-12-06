@@ -19,5 +19,5 @@ WELCOME TO MY GREENGINN ASSIGNMENT
 17. Finishing touches to refactoring: clearing selection and voiding GJNumbersView in case of user clearing selection.
 
 18. Time to tacke "Average Ticker Values". As always, will commence with a basic layout which then will be refined according to the nature of the data to be displayed.
-
+19. Fetched data and decided to reuse components GJNumbersView and GJNumberLabel  to display data.
 

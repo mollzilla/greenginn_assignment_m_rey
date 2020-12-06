@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/styles.css';
 import GJNumberLabel from "./GJNumberLabel";
-// import './index.css';
-// import App from './App';
 import Paper from '@material-ui/core/Paper';
 
 
