@@ -11,8 +11,14 @@ body {
 }
 
 .app-container {
+  text-align: center;
   display: flex;
   flex-flow: row wrap;
+  align-items: baseline;
+
+  h1 {
+    text-align: center;
+  }
 }
 
 .trading-pairs-container {
@@ -23,10 +29,7 @@ body {
 }
 
 .container-item  {
-  // height: 85vh;
   margin: 25px 0;
-  // width: 40vw;
-  // background-color: plum;
 }
 
 .trading-pairs-paper {
@@ -96,4 +99,52 @@ body {
     padding-top: 5px;
     margin-top: 5px;
   }
+}
+
+.average-container {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 2px;
+  text-align: center;
+
+  .single-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    padding: 20px;
+
+  }
+
+  .single-values > * {
+    width: 200px;
+  }
+}
+
+
+
+
+
+.average {
+  margin: 50px;
+  padding: 40px;
+  color: #EAEAEA;
+  background:linear-gradient(#117e94,#0f6e81) ;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 8px -1px rgba(0,0,0,0.43); 
+  box-shadow: 5px 5px 8px -1px rgba(0,0,0,0.43);
+
+  h3 {
+    font-size: 1.6rem;
+    border-bottom: 1px solid #FFF;
+    padding-bottom: 5px;
+  }
+
+  h4 {
+    font-size: 2.5rem;
+    padding: 25px;
+  }
+
+
+
 }

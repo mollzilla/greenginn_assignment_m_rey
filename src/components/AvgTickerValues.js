@@ -6,13 +6,8 @@ import GJNumberLabel from "./GJNumberLabel";
 
 export default function AvgTickerValues() {
 
-  const [bitstampData, setbitstampData] = useState([]);
-  const [coinbaseData, setCoinbaseData] = useState([]);
-  const [bitfinexData, setbitfinexData] = useState([]);
-
+  const [averageValue, setAverageValue] = useState(0);
   const [pairsData, setPairsData] = useState([]);
-
-  // const [averageValues, setAverageValues] = useState(0);
 
   async function fetchTickerValues() {
     try {
@@ -49,7 +44,7 @@ export default function AvgTickerValues() {
       console.log(pairsData.map(x => x.value))
       let sum = pairsData.reduce((acc, current) => acc+current.value, 0); // divide in 2 lines to make it more readable
       let avg =  sum/pairsData.length;
-      console.log(avg.toFixed(2))
+      setAverageValue(avg.toFixed(2));
     }
   }
 
@@ -75,12 +70,22 @@ export default function AvgTickerValues() {
 
   return (
     <div>
-      <Paper elevation={3} className="container-item">
-        <h2>Average Ticker Values</h2>
-        {/* <h4>{coinBaseData.data.rates.AED}</h4> */}
-        <div className="single-values">
-          <GJNumberLabel pair={"mili", "25"} />  
-        </div>  
+      <Paper elevation={3} className="average-container">
+      <h2>Average Ticker Values</h2>
+        <Paper elevation={3} className="trading-pairs-paper">
+          <h3>Single Ticker Values</h3>
+          <div className="single-values">
+            {
+              pairsData.length && (
+                pairsData.map(pair => <GJNumberLabel description={pair.name} value={pair.value} />  )            
+              )
+            }
+          </div>
+          </Paper>
+          <div className="average">
+            <h3>Average Value</h3>
+          <h4>$ {averageValue}</h4>  
+          </div>
       </Paper>
     </div>
   )

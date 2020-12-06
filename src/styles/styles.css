@@ -12,6 +12,7 @@ body {
 }
 
 .app-container {
+  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,6 +20,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.app-container h1 {
+  text-align: center;
 }
 
 .trading-pairs-container {
@@ -127,5 +135,56 @@ body {
   border-top: 1px solid #EAEAEA;
   padding-top: 5px;
   margin-top: 5px;
+}
+
+.average-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 25px 2px;
+  text-align: center;
+}
+
+.average-container .single-values {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 20px;
+}
+
+.average-container .single-values > * {
+  width: 200px;
+}
+
+.average {
+  margin: 50px;
+  padding: 40px;
+  color: #EAEAEA;
+  background: -webkit-gradient(linear, left top, left bottom, from(#117e94), to(#0f6e81));
+  background: linear-gradient(#117e94, #0f6e81);
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 8px -1px rgba(0, 0, 0, 0.43);
+  box-shadow: 5px 5px 8px -1px rgba(0, 0, 0, 0.43);
+}
+
+.average h3 {
+  font-size: 1.6rem;
+  border-bottom: 1px solid #FFF;
+  padding-bottom: 5px;
+}
+
+.average h4 {
+  font-size: 2.5rem;
+  padding: 25px;
 }
 /*# sourceMappingURL=styles.css.map */

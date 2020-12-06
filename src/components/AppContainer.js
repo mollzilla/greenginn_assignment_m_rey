@@ -11,15 +11,18 @@ export default function AppContainer() {
   return (
     <div>
       <Container className="app-container" maxWidth="xl">
-        This will be the main container and single source of truth for the app.
+      <h1>
+        WELCOME TO MY GREENGINN ASSIGNMENT
+      </h1>
+        This will be the main container of the single page App.
         <Grid
           container
           direction="row"
           justify="space-evenly"
-          alignItems="center"
+          alignItems="baseline"
         >
-          <AvgTickerValues  />
-          <TradingPairsContainer  />
+          <AvgTickerValues />
+          <TradingPairsContainer />
         </Grid>
       </Container>
     </div>
