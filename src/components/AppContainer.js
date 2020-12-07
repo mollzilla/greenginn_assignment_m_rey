@@ -14,7 +14,7 @@ export default function AppContainer() {
       <h1>
         WELCOME TO MY GREENGINN ASSIGNMENT
       </h1>
-        This will be the main container of the single page App.
+        This is the main container of the single page App.
         <Grid
           container
           direction="row"

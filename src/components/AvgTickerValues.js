@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/styles.css';
-import Paper from '@material-ui/core/Paper';
-// import GJNumbersView from "./GJNumbersView";
 import GJNumberLabel from "./GJNumberLabel";
-import GJNumbersView from "./GJNumbersView";
+import Paper from '@material-ui/core/Paper';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default function AvgTickerValues() {
@@ -45,7 +43,6 @@ export default function AvgTickerValues() {
   const getAverageTickerValues = () => {
     if(pairsData.length===3)
     {
-      // console.log(Object.values(pairsData));
       console.log(pairsData.map(x => x.value))
       let sum = pairsData.reduce((acc, current) => acc+current.value, 0); // divide in 2 lines to make it more readable
       let avg =  sum/pairsData.length;
@@ -54,23 +51,6 @@ export default function AvgTickerValues() {
   }
 
   useEffect(() => getAverageTickerValues(), [pairsData])
-
-  /* bitfinex.com api response */
-
-  // [
-  //   SYMBOL,
-  //   BID, 
-  //   BID_SIZE, 
-  //   ASK, 
-  //   ASK_SIZE, 
-  //   DAILY_CHANGE, 
-  //   DAILY_CHANGE_RELATIVE, 
-  //   LAST_PRICE, 
-  //   VOLUME, 
-  //   HIGH, 
-  //   LOW
-  // ],
-
   useEffect(() => fetchTickerValues(), []);
 
   return (
