@@ -3,7 +3,6 @@ import '../styles/styles.css';
 import GJNumberLabel from "./GJNumberLabel";
 import Paper from '@material-ui/core/Paper';
 
-
 export default function GJNumbersView(props) {
 
   const { pair } = props;

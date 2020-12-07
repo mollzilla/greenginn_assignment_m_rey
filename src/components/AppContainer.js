@@ -12,7 +12,7 @@ export default function AppContainer() {
     <div>
       <Container className="app-container" maxWidth="xl">
       <h1>
-        WELCOME TO MY GREENGINN ASSIGNMENT
+        WELCOME TO MY GREENJINN ASSIGNMENT
       </h1>
         This is the main container of the single page App.
         <Grid

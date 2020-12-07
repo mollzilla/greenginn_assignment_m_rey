@@ -1,4 +1,4 @@
-WELCOME TO MY GREENGINN ASSIGNMENT
+WELCOME TO MY GREENJINN ASSIGNMENT
 
 1. Decided App and components layout on pen and paper.
 2. Created react app, Github repo and pushed new project.
@@ -23,5 +23,6 @@ WELCOME TO MY GREENGINN ASSIGNMENT
 20. Still not knowing which data to average, choose a value to test the functionality.
 21. Added responsivenes to average container via flexbox.
 
-22. At deployment, ran into an array of mistakes that could have been easily avoided  with more attention to detail: the homepage was added at the wrong place in package.json, causing it to deploy incorrectly. Luckily the mistake was fixed.
+22. Luckily the variable to use to get AVG was bid, which was the one that was already been used.
+23. At deployment, ran into an array of mistakes that could have been easily avoided  with more attention to detail: the homepage was added at the wrong place in package.json, causing it to deploy incorrectly. Luckily the mistake was fixed.
 

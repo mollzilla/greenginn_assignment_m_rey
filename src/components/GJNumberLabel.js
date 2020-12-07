@@ -17,7 +17,6 @@ export default function GJNumberLabel(props) {
   }, [description, value])
 
 
-  // console.log(value)
   return (
     <div className="gj-number-label">
       <div className="description"><h4>{description}</h4></div>
