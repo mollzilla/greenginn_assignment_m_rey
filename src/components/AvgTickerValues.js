@@ -3,11 +3,13 @@ import '../styles/styles.css';
 import Paper from '@material-ui/core/Paper';
 // import GJNumbersView from "./GJNumbersView";
 import GJNumberLabel from "./GJNumberLabel";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default function AvgTickerValues() {
 
   const [averageValue, setAverageValue] = useState(0);
   const [pairsData, setPairsData] = useState([]);
+  const [loading, setLoading] = useState(true)
 
   async function fetchTickerValues() {
     try {
@@ -30,7 +32,7 @@ export default function AvgTickerValues() {
           { name: "bitfinex",
             value: bitfinex[0][1] }
         ]);
-        // console.log(bitstamp, coinbase, bitfinex)
+        setLoading(false)
       });
 
     }
@@ -40,7 +42,7 @@ export default function AvgTickerValues() {
   }
 
   const getAverageTickerValues = () => {
-    if(pairsData.length==3)
+    if(pairsData.length===3)
     {
       // console.log(Object.values(pairsData));
       console.log(pairsData.map(x => x.value))
@@ -73,13 +75,13 @@ export default function AvgTickerValues() {
   return (
     <div className="container-item">
       <Paper elevation={3} className="average-container">
-      <h2>Average Ticker Values</h2>
+      <h2>{ loading? "Loading..." : "Average Ticker Values" }</h2>
         <Paper elevation={3} className="trading-pairs-paper">
-          <h3>Single Ticker Values</h3>
+          <h3>{ loading ? <CircularProgress /> : "Single Ticker Values" }</h3>
           <div className="single-values">
             {
               pairsData.length && (
-                pairsData.map(pair => <GJNumberLabel description={pair.name} value={pair.value} />  )            
+                pairsData.map(pair => <GJNumberLabel description={pair.name} value={pair.value} key={pair.name} />  )            
               )
             }
           </div>
