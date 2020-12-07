@@ -23,13 +23,14 @@ body {
 
 .trading-pairs-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
 .container-item  {
   margin: 25px 0;
+  width: 90%;
 }
 
 .trading-pairs-paper {
@@ -104,10 +105,15 @@ body {
 .average-container {
   display: flex;
   flex-direction: column;
-  padding: 25px 2px;
+  padding: 80px 2px;
   text-align: center;
 
+  h2 {
+    margin-bottom: 25px;
+  }
+
   .single-values {
+    margin: 25px 0;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -121,13 +127,9 @@ body {
   }
 }
 
-
-
-
-
 .average {
-  margin: 50px;
-  padding: 40px;
+  margin: 20px;
+  padding: 30px;
   color: #EAEAEA;
   background:linear-gradient(#117e94,#0f6e81) ;
   border-radius: 5px;
@@ -141,14 +143,15 @@ body {
   }
 
   h4 {
-    font-size: 2.5rem;
-    padding: 25px;
+    font-size: 2rem;
+    padding: 25px 0;
   }
 
 }
 
 @media(min-width: 768px) {
 
+  
   .cosito-de-arriba {
     .button-container {
       display: grid;
@@ -158,5 +161,18 @@ body {
 
   .pairs-list {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
+@media(min-width: 1024px) {
+  .container-item {
+    max-width: 45%;
+  }
+}
+
+@media(min-width: 1440px) {
+  .container-item {
+    max-width: 650px;
   }
 }

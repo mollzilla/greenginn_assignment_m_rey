@@ -38,8 +38,8 @@ export default function TradingPairsContainer() {
   useEffect(() => { fetchPairData() }, [])
 
   return (
-    <div>
-      <Paper elevation={3} className="container-item trading-pairs-container">
+    <div  className="container-item">
+      <Paper elevation={3} className="trading-pairs-container">
         <CositoDeArriba pair={pair} pairData={pairData} handlePairChange={handlePairChange} clearPairSelection={clearPairSelection} />
         <GJNumbersView pair={pair} />
       </Paper>

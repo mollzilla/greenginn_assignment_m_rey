@@ -18,7 +18,7 @@ export default function AvgTickerValues() {
       ]).then(([data1, data2, data3]) =>  {
         return Promise.all([data1.json(),  data2.json(), data3.json()])
       }).then(([bitstamp, coinbase, bitfinex]) => {
-        // console.log("bitstamp", bitstamp, "coinbase", coinbase, "bitfinex", bitfinex)
+        console.log("bitstamp", bitstamp, "coinbase", coinbase, "bitfinex", bitfinex)
         setPairsData([
           { 
             name: "bitstamp",
@@ -29,8 +29,10 @@ export default function AvgTickerValues() {
           },
           { name: "bitfinex",
             value: bitfinex[0][1] }
-        ])
+        ]);
+        // console.log(bitstamp, coinbase, bitfinex)
       });
+
     }
     catch(error) {
       console.log(error);
@@ -69,7 +71,7 @@ export default function AvgTickerValues() {
   useEffect(() => fetchTickerValues(), []);
 
   return (
-    <div>
+    <div className="container-item">
       <Paper elevation={3} className="average-container">
       <h2>Average Ticker Values</h2>
         <Paper elevation={3} className="trading-pairs-paper">
