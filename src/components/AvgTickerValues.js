@@ -13,9 +13,9 @@ export default function AvgTickerValues() {
   async function fetchTickerValues() {
     try {
       await Promise.all(
-        [fetch(`https://bitstamp.net/api/v2/ticker/btcusd`),
-        fetch(`https://api.coinbase.com/v2/exchange-rates?currency=BTC`),
-        fetch(`https://api-pub.bitfinex.com/v2/tickers?symbols=tBTCUSD`)
+        [fetch(`https://cors-anywhere.herokuapp.com/bitstamp.net/api/v2/ticker/btcusd`),
+        fetch(`https://cors-anywhere.herokuapp.com/api.coinbase.com/v2/exchange-rates?currency=BTC`),
+        fetch(`https://cors-anywhere.herokuapp.com/api-pub.bitfinex.com/v2/tickers?symbols=tBTCUSD`)
       ]).then(([data1, data2, data3]) =>  {
         return Promise.all([data1.json(),  data2.json(), data3.json()])
       }).then(([bitstamp, coinbase, bitfinex]) => {
