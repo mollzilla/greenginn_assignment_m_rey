@@ -19,7 +19,7 @@ export default function AppContainer() {
           container
           direction="row"
           justify="space-evenly"
-          alignItems="baseline"
+          alignItems="flex-start"
         >
           <AvgTickerValues />
           <TradingPairsContainer />

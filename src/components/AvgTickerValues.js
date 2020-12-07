@@ -3,6 +3,7 @@ import '../styles/styles.css';
 import Paper from '@material-ui/core/Paper';
 // import GJNumbersView from "./GJNumbersView";
 import GJNumberLabel from "./GJNumberLabel";
+import GJNumbersView from "./GJNumbersView";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 export default function AvgTickerValues() {
